@@ -1,0 +1,577 @@
+/* ============================================================
+   SOMOMASROOM — Design tokens
+   Ganti nilai di :root ini untuk menyesuaikan warna/tipografi
+   ============================================================ */
+:root {
+  /* Colors */
+  --ink:        #1C120A;   /* dasar gelap, seperti media tanam */
+  --ink-2:      #2A1B10;   /* kartu di atas dasar gelap */
+  --ink-3:      #3B2717;   /* border/garis di atas dasar gelap */
+  --bone:       #F2EBDA;   /* teks terang di atas gelap */
+  --bone-dim:   #C9BCA0;   /* teks sekunder di atas gelap */
+  --parchment:  #EAE1C8;   /* latar terang alternatif */
+  --parchment-2:#DCD0AF;   /* elemen di atas parchment */
+  --text-dark:  #241A10;   /* teks utama di atas terang */
+  --text-muted: #5B4E3D;   /* teks sekunder di atas terang */
+  --moss:       #6B7D4F;   /* aksen sekunder — miselium/lumut */
+  --moss-deep:  #4B5A39;
+  --spore:      #BD7B2A;   /* aksen utama — warna tudung jamur */
+  --spore-light:#E0A85C;
+
+  /* Type */
+  --font-display: "Fraunces", serif;
+  --font-body: "Karla", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --container: 1180px;
+}
+
+/* ============================================================
+   Reset & base
+   ============================================================ */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0; }
+.section-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 5.5rem 1.75rem;
+}
+.section-inner--narrow { max-width: 760px; text-align: center; }
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--spore-light);
+  margin-bottom: 1.1rem;
+}
+.eyebrow--dark { color: var(--spore); }
+
+.section-title {
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.18;
+  color: var(--text-dark);
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+.section-title--light { color: var(--bone); }
+
+:focus-visible {
+  outline: 2px solid var(--spore-light);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.btn--primary {
+  background: var(--spore);
+  color: var(--ink);
+}
+.btn--primary:hover { transform: translateY(-2px); background: var(--spore-light); }
+.btn--ghost {
+  border-color: var(--bone-dim);
+  color: var(--bone);
+}
+.btn--ghost:hover { border-color: var(--bone); transform: translateY(-2px); }
+
+/* ============================================================
+   Nav
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(28, 18, 10, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(242, 235, 218, 0.08);
+}
+.nav__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  color: var(--bone);
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.92rem;
+  color: var(--bone-dim);
+}
+.nav__links a:hover { color: var(--bone); }
+.nav__cta {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--spore);
+  color: var(--bone) !important;
+}
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav__burger span {
+  width: 22px; height: 2px;
+  background: var(--bone);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--bone);
+  padding: 9rem 1.75rem 6rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 2rem;
+  align-items: center;
+}
+.hero__spores {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(189,123,42,0.35) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(107,125,79,0.28) 1.5px, transparent 1.5px);
+  background-size: 140px 140px, 190px 190px;
+  background-position: 0 0, 60px 90px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero__inner {
+  position: relative;
+  max-width: 640px;
+  grid-column: 1;
+}
+.hero__title {
+  font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.6rem;
+}
+.hero__title em {
+  font-style: italic;
+  color: var(--spore-light);
+}
+.hero__lede {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--bone-dim);
+  max-width: 52ch;
+  margin-bottom: 2.4rem;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__jar {
+  position: relative;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+.jar-svg { width: min(220px, 80%); height: auto; }
+.jar-outline {
+  fill: rgba(242,235,218,0.04);
+  stroke: var(--bone-dim);
+  stroke-width: 1.5;
+}
+.jar-neck {
+  fill: rgba(242,235,218,0.04);
+  stroke: var(--bone-dim);
+  stroke-width: 1.5;
+}
+.jar-substrate {
+  fill: var(--ink-3);
+}
+.mycelium-threads path {
+  fill: none;
+  stroke: var(--spore-light);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: growThread 2.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+.mycelium-threads path:nth-child(2) { animation-delay: 0.9s; stroke: var(--moss); }
+.mycelium-threads path:nth-child(3) { animation-delay: 1.2s; }
+.mycelium-threads path:nth-child(4) { animation-delay: 1.5s; stroke: var(--moss); }
+.mycelium-threads path:nth-child(5) { animation-delay: 1.8s; }
+@keyframes growThread {
+  to { stroke-dashoffset: 0; }
+}
+.jar-caption {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--bone-dim);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; text-align: left; padding-top: 7.5rem; }
+  .hero__jar { grid-column: 1; margin-top: 2.5rem; }
+}
+
+/* ============================================================
+   Profil (lihat definisi profil__grid & photo-frame di bawah,
+   dekat blok Layanan)
+   ============================================================ */
+.profil { background: var(--parchment); }
+
+/* ============================================================
+   Alur produksi — signature mycelium flow
+   ============================================================ */
+.alur {
+  background: var(--ink);
+  color: var(--bone);
+}
+.alur__sub {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--bone-dim);
+  max-width: 56ch;
+  margin-bottom: 3.5rem;
+}
+
+.mycelium-flow { position: relative; }
+.mycelium-flow__svg {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+}
+.flow-path {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 2;
+}
+.flow-path-progress {
+  fill: none;
+  stroke: var(--spore);
+  stroke-width: 2;
+}
+
+.mycelium-flow__nodes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.flow-node__dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink-2);
+  border: 1.5px solid var(--ink-3);
+  color: var(--spore-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.flow-node--last .flow-node__dot {
+  background: var(--moss-deep);
+  border-color: var(--moss);
+  color: var(--bone);
+}
+.flow-node h3 {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--bone);
+}
+.flow-node p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--bone-dim);
+}
+
+@media (max-width: 980px) {
+  .mycelium-flow__svg { display: none; }
+  .mycelium-flow__nodes {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    border-left: 2px solid var(--ink-3);
+    padding-left: 1.5rem;
+  }
+  .flow-node__dot { position: absolute; margin-left: -2.45rem; }
+  .flow-node { padding-left: 0.5rem; position: relative; }
+}
+
+/* ============================================================
+   Photo frame (placeholder foto yang otomatis hilang saat
+   file gambar asli sudah ditambahkan ke folder images/)
+   ============================================================ */
+.photo-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--ink-3);
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-frame__fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--bone-dim);
+}
+.photo-frame__fallback small { opacity: 0.7; font-size: 0.7rem; }
+.photo-frame.is-empty {
+  border: 1px dashed var(--bone-dim);
+  background: repeating-linear-gradient(
+    45deg, var(--ink-3), var(--ink-3) 10px, transparent 10px, transparent 20px
+  );
+}
+.photo-frame.is-empty img { display: none; }
+.photo-frame.is-empty .photo-frame__fallback { display: flex; }
+
+.photo-frame--profil { aspect-ratio: 4 / 5; }
+.photo-frame--card { aspect-ratio: 4 / 3; margin-bottom: 1.2rem; }
+.photo-frame--galeri { aspect-ratio: 1 / 1; }
+
+/* on light sections (profil/layanan/galeri), placeholder text needs dark tone */
+.profil .photo-frame__fallback,
+.layanan .photo-frame__fallback,
+.galeri .photo-frame__fallback {
+  color: var(--text-muted);
+}
+.profil .photo-frame.is-empty,
+.layanan .photo-frame.is-empty,
+.galeri .photo-frame.is-empty {
+  background: repeating-linear-gradient(
+    45deg, var(--parchment-2), var(--parchment-2) 10px, transparent 10px, transparent 20px
+  );
+  border-color: var(--text-muted);
+}
+
+/* ============================================================
+   Profil grid (update: teks + foto)
+   ============================================================ */
+.profil__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+}
+.profil__text-col { display: flex; flex-direction: column; gap: 1.4rem; }
+.profil__text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+.profil__text strong { color: var(--text-dark); }
+@media (max-width: 720px) {
+  .profil__grid { grid-template-columns: 1fr; }
+  .photo-frame--profil { aspect-ratio: 16 / 10; }
+}
+
+/* ============================================================
+   Layanan
+   ============================================================ */
+.layanan { background: var(--parchment); }
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+.layanan-card {
+  background: var(--bone);
+  border: 1px solid var(--parchment-2);
+  border-radius: 18px;
+  padding: 1.2rem 1.2rem 1.6rem;
+}
+.layanan-card h3 {
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+.layanan-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+@media (max-width: 860px) {
+  .layanan-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Galeri
+   ============================================================ */
+.galeri { background: var(--parchment); }
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 860px) {
+  .galeri-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   Growth note (dipakai di section Layanan)
+   ============================================================ */
+.growth-note {
+  background: var(--moss-deep);
+  color: var(--bone);
+  border-radius: 18px;
+  padding: 1.6rem 1.9rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+.growth-note strong { color: var(--spore-light); }
+
+/* ============================================================
+   Kontak
+   ============================================================ */
+.kontak { background: var(--ink); color: var(--bone); text-align: center; }
+.kontak__lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--bone-dim);
+  margin-bottom: 3rem;
+}
+.kontak__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  text-align: left;
+}
+.kontak__item {
+  background: var(--ink-2);
+  border: 1px solid var(--ink-3);
+  border-radius: 16px;
+  padding: 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+a.kontak__item:hover { border-color: var(--spore); transform: translateY(-3px); }
+.kontak__item-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--spore-light);
+}
+.kontak__item-value {
+  font-size: 0.98rem;
+  color: var(--bone);
+}
+
+@media (max-width: 780px) {
+  .kontak__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer { background: var(--ink); border-top: 1px solid var(--ink-3); }
+.footer__inner {
+  padding: 2rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--bone-dim);
+}
+
+/* ============================================================
+   Mobile nav
+   ============================================================ */
+@media (max-width: 760px) {
+  .nav__links {
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    background: var(--ink);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.75rem;
+    gap: 1.2rem;
+    border-bottom: 1px solid var(--ink-3);
+    transform: translateY(-130%);
+    transition: transform 0.25s ease;
+  }
+  .nav__links.is-open { transform: translateY(0); }
+  .nav__burger { display: flex; }
+}

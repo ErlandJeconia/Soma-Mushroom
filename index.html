@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOMO MUSHSROOM</title>
+<meta name="description" content="SOMO MUSHROOM — Pembibitan jamur kuping dari Karangan">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/LOGO SOMO MUSHROOM.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">SOMO MUSHROOM</a>
+    <nav class="nav__links">
+      <a href="#profil">Profil</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#alur">Alur Produksi</a>
+      <a href="#kontak" class="nav__cta">Hubungi Kami</a>
+    </nav>
+    <button class="nav__burger" id="navBurger" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__spores" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="eyebrow">Pembibitan Jamur &middot; Karangan, Pasung, Kec. Wedi, Kab. Klaten, Jawa Tengah</p>
+    <h1 class="hero__title">
+      Ditumbuhkan<br>
+      <em>Telaten,</em> dari desa<br>
+      untuk petani.
+    </h1>
+    <p class="hero__lede">
+      SOMO MUSHROOM membibitkan jamur mulai dari serbuk gergaji hingga siap
+      diinkubasi &mdash; Selalu dikerjakan dalam alur yang konsisten agar
+      petani percaya pada setiap baglog yang datang.
+    </p>
+    <div class="hero__actions">
+      <a href="#kontak" class="btn btn--primary">Pesan Bibit / Kerja Sama</a>
+      <a href="#alur" class="btn btn--ghost">Lihat Alur Produksi &darr;</a>
+    </div>
+  </div>
+  <div class="hero__jar" aria-hidden="true">
+    <svg viewBox="0 0 220 320" class="jar-svg">
+      <defs>
+        <clipPath id="jarClip">
+          <path d="M40 60 Q40 40 60 40 L160 40 Q180 40 180 60 L190 280 Q190 305 165 305 L55 305 Q30 305 30 280 Z"/>
+        </clipPath>
+      </defs>
+      <path class="jar-outline" d="M40 60 Q40 40 60 40 L160 40 Q180 40 180 60 L190 280 Q190 305 165 305 L55 305 Q30 305 30 280 Z"/>
+      <rect class="jar-neck" x="72" y="16" width="76" height="30" rx="6"/>
+      <g clip-path="url(#jarClip)">
+        <rect class="jar-substrate" x="20" y="150" width="180" height="160"/>
+        <g class="mycelium-threads">
+          <path d="M60 150 C 70 130, 90 140, 95 115 C 100 95, 80 85, 85 60" />
+          <path d="M110 150 C 105 125, 130 120, 125 95 C 122 78, 140 70, 138 50" />
+          <path d="M150 150 C 155 130, 135 115, 145 90 C 150 72, 130 65, 132 48" />
+          <path d="M85 150 C 88 135, 70 125, 78 105" />
+          <path d="M135 150 C 130 138, 148 130, 142 112" />
+        </g>
+      </g>
+    </svg>
+    <p class="jar-caption">Melalui Proses Inkubasi </p>
+  </div>
+</section>
+
+<!-- ============ PROFIL ============ -->
+<section class="profil" id="profil">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow--dark">Profil Singkat</p>
+    <h2 class="section-title">Fokus di satu hal: bibit yang sehat.</h2>
+    <div class="profil__grid">
+      <div class="profil__text-col">
+        <p class="profil__text">
+          <strong>SOMO MUSHROOM</strong> adalah usaha mikro yang bergerak di bidang
+          pembibitan jamur, berlokasi di Desa Pasung, Kecamatan wedi, Dusun Karangan.
+          Berdiri sejak 2017, dan kini menjadi salah satu pemasok bibit jamur yang diandalkan oleh petani
+          di sekitar wilayahnya.
+      </p>
+      <p class="profil__text">
+          Berbeda dari kebanyakan usaha jamur yang mengurus budidaya sampai panen,
+          SOMO MUSHROOM hanya fokus pada satu tahap yaitu <strong>pembibitan</strong>.
+          Mayoritas pesanan yang masuk adalah bibit jamur kuping, meski jenis
+          lain juga dilayani sesuai permintaan petani.
+      </p>
+        <p class="profil__text">
+        Produksi berjalan secara fleksibel mengikuti pesanan yang masuk agar bibit yang dikirim selalu dalam kondisi segar.
+      </p>
+      </div>
+      <figure class="photo-frame photo-frame--profil">
+        <img src="images/gambar1.jpeg" alt="Foto lokasi produksi SOMO MUSHROOM"
+     onerror="this.closest('.photo-frame').classList.add('is-empty')">
+        <figcaption class="photo-frame__fallback">
+          Foto lokasi / pemilik usaha<br><small>ganti: images/profil.jpg</small>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAYANAN ============ -->
+<section class="layanan" id="layanan">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow--dark">Layanan</p>
+    <h2 class="section-title">Layanan yang bisa kami sediakan</h2>
+    <div class="layanan-grid">
+      <div class="layanan-card">
+        <figure class="photo-frame photo-frame--card">
+          <img src="images/gambar6.PNG" alt="Bibit jamur kuping"
+               onerror="this.closest('.photo-frame').classList.add('is-empty')">
+          <figcaption class="photo-frame__fallback">
+            Foto bibit jamur kuping<br><small>ganti: images/layanan-1.jpg</small>
+          </figcaption>
+        </figure>
+        <h3>Bibit Jamur Kuping</h3>
+        <p>Produk utama  &mdash; dibibitkan lewat alur yang sama setiap
+        siklus, siap dikirim begitu miselium merambat merata.</p>
+      </div>
+
+      <div class="layanan-card">
+        <figure class="photo-frame photo-frame--card">
+          <img src="images/gambar7.PNG" alt="Bibit jamur jenis lain"
+               onerror="this.closest('.photo-frame').classList.add('is-empty')">
+          <figcaption class="photo-frame__fallback">
+            Foto jenis jamur lain<br><small>ganti: images/layanan-2.jpg</small>
+          </figcaption>
+        </figure>
+        <h3>Bibit Jenis Lain</h3>
+        <p>Di luar jamur kuping, kami juga menerima pesanan bibit jenis jamur
+        lain sesuai kebutuhan petani.</p>
+      </div>
+
+      <div class="layanan-card">
+        <figure class="photo-frame photo-frame--card">
+          <img src="images/gambar8.jpg" alt="Kerja sama pemasok bahan baku"
+               onerror="this.closest('.photo-frame').classList.add('is-empty')">
+          <figcaption class="photo-frame__fallback">
+            Foto bahan baku / pemasok<br><small>ganti: images/layanan-3.jpg</small>
+          </figcaption>
+        </figure>
+        <h3>Kerja Sama Pemasok</h3>
+        <p>Terbuka untuk kerja sama jangka panjang dengan pemasok serbuk
+        gergaji dan bahan pendukung lainnya.</p>
+      </div>
+    </div>
+
+    <div class="growth-note">
+      <p>
+        <strong>Somo Mushroom bersiap memperluas kapasitas</strong> untuk menjangkau
+        sentra-sentra jamur yang lebih besar pada daerah Jawa Tengah. Bagi mitra
+        atau pemasok yang ingin membantu proses ini, silakan hubungi kami.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALUR PRODUKSI (signature) ============ -->
+<section class="alur" id="alur">
+  <div class="section-inner">
+    <p class="eyebrow">Alur Produksi</p>
+    <h2 class="section-title section-title--light">
+      Tujuh tahap yang dijaga urutannya setiap siklus produksi.
+    </h2>
+    <p class="alur__sub">
+      Sama seperti miselium yang menjalar mengikuti jalur substratnya,
+      setiap baglog melewati jalur produksi yang sama &mdash; setiap langkah tidak dilewati.
+    </p>
+
+    <div class="mycelium-flow" id="myceliumFlow">
+      <svg class="mycelium-flow__svg" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+        <path id="flowPath" class="flow-path" d="M40,70 C120,20 180,120 260,70 C340,20 400,120 480,70 C560,20 620,120 700,70 C780,20 840,120 920,70 C1000,20 1060,120 1140,70" />
+      </svg>
+      <div class="mycelium-flow__nodes">
+        <div class="flow-node">
+          <span class="flow-node__dot">01</span>
+          <h3>Serbuk Gergaji</h3>
+          <p>Bahan baku utama, dipasok dari sentra yang berkualitas</p>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node__dot">02</span>
+          <h3>Pencampuran</h3>
+          <p>Serbuk dicampur bahan pendukung hingga komposisinya merata.</p>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node__dot">03</span>
+          <h3>Fermentasi</h3>
+          <p>Campuran diistirahatkan supaya media tanam matang sempurna.</p>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node__dot">04</span>
+          <h3>Pengovenan</h3>
+          <p>Baglog disterilkan untuk mematikan kontaminan yang tak diinginkan.</p>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node__dot">05</span>
+          <h3>Inokulasi Bibit</h3>
+          <p>Bibit induk ditanamkan setelah baglog benar-benar dingin.</p>
+        </div>
+        <div class="flow-node">
+          <span class="flow-node__dot">06</span>
+          <h3>Inkubasi</h3>
+          <p>Miselium dibiarkan menjalar hingga memenuhi baglog.</p>
+        </div>
+        <div class="flow-node flow-node--last">
+          <span class="flow-node__dot">07</span>
+          <h3>Distribusi ke Petani</h3>
+          <p>Baglog siap dikirim begitu rambatan miselium merata.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERI ============ -->
+<section class="galeri">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow--dark">Galeri</p>
+    <h2 class="section-title">Sekilas dari Somo Mushroom.</h2>
+    <div class="galeri-grid">
+      <figure class="photo-frame photo-frame--galeri">
+        <img src="images/gambar2.PNG" alt="Dokumentasi kegiatan 1" onerror="this.closest('.photo-frame').classList.add('is-empty')">
+        <figcaption class="photo-frame__fallback"><small>images/galeri-1.jpg</small></figcaption>
+      </figure>
+      <figure class="photo-frame photo-frame--galeri">
+        <img src="images/gambar3.PNG" alt="Dokumentasi kegiatan 2" onerror="this.closest('.photo-frame').classList.add('is-empty')">
+        <figcaption class="photo-frame__fallback"><small>images/galeri-2.jpg</small></figcaption>
+      </figure>
+      <figure class="photo-frame photo-frame--galeri">
+        <img src="images/gambar4.PNG" alt="Dokumentasi kegiatan 3" onerror="this.closest('.photo-frame').classList.add('is-empty')">
+        <figcaption class="photo-frame__fallback"><small>images/galeri-3.jpg</small></figcaption>
+      </figure>
+      <figure class="photo-frame photo-frame--galeri">
+        <img src="images/gambar5.PNG" alt="Dokumentasi kegiatan 4" onerror="this.closest('.photo-frame').classList.add('is-empty')">
+        <figcaption class="photo-frame__fallback"><small>images/galeri-4.jpg</small></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAK ============ -->
+<section class="kontak" id="kontak">
+  <div class="section-inner section-inner--narrow">
+    <p class="eyebrow">Kerja Sama</p>
+    <h2 class="section-title section-title--light">
+      Hubungi kami untuk memesan bibit atau menjadi mitra?
+    </h2>
+    <p class="kontak__lede">
+      Kami melayani petani jamur yang butuh bibit terpercaya, maupun pemasok
+      bahan baku yang ingin bekerja sama jangka panjang.
+    </p>
+
+    <div class="kontak__grid">
+      <a class="kontak__item" href="https://wa.me/6285848106703" target="_blank" rel="noopener">
+        <span class="kontak__item-label">WhatsApp</span>
+        <span class="kontak__item-value">0858-4810-6703</span>
+      </a>
+      <div class="kontak__item">
+        <span class="kontak__item-label">Lokasi</span>
+        <span class="kontak__item-value">Karangan, Pasung, Kec. Wedi, Kab. Klaten, Jawa Tengah</span>
+      </div>
+      <div class="kontak__item">
+        <span class="kontak__item-label">Jam Layanan</span>
+        <span class="kontak__item-value">08.00 - 16.00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-inner footer__inner">
+    <span>SOMO MUSHROOM &mdash; Pembibitan Jamur</span>
+    <span class="footer__note">Program KKN UPN "Veteran" Yogyakarta &middot; KKN BN UPNYK 84.344</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
